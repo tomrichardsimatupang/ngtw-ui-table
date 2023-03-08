@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+    .ui-table {
+        @apply block min-w-full overflow-auto table-fixed;
+    }
+
+    .ui-table::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+    }
+      
+    /* Track */
+    .ui-table::-webkit-scrollbar-track {
+        background: none;
+    }
+      
+    /* Handle */
+    .ui-table::-webkit-scrollbar-thumb {
+        background: none;
+        border-radius: 8px;
+    }
+    
+    /* Handle on hover */
+    .ui-table::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+    .ui-table-th {
+        @apply sticky top-0 px-6 py-2 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 border-b border-gray-300 bg-gray-50;
+    }
+
+    .ui-table-td {
+        @apply px-6 py-2 whitespace-nowrap border-b border-gray-200;
+    }
+
+    .ui-table-cell-format-number {
+        @apply text-right;
+    }
+
+    .empty-state, .loading-state {
+        @apply flex justify-center items-center w-full h-60 border-2 border-dotted rounded-lg border-gray-300 text-gray-500
+        bg-slate-200;
+    }
+
+    .empty-state-td, .loading-state-td {
+        @apply absolute w-full;
+    }
+
+    .empty-state-tr, .loading-state-tr {
+        height: calc(15rem + 4rem);
+    }
+
+    .ui-table-pagination {
+        @apply flex justify-between items-center px-6 py-3;
+    }
+
+    .ui-table-pagination-info {
+        @apply text-sm text-slate-700;
+    }
+
+    .ui-table-pagination-button-group {
+        @apply flex;
+    }
+
+    .ui-table-pagination-button-group .ui-table-pagination-button-next,
+    .ui-table-pagination-button-group .ui-table-pagination-button-prev,
+    .ui-table-pagination-button-group .ui-table-pagination-button-number {
+        @apply h-8 w-8 flex justify-center items-center text-gray-600 hover:bg-gray-200;
+    }
+
+    .ui-table-pagination-button-group .ui-table-pagination-button-number {
+        @apply border border-gray-200 w-10;
+        font-size: 0.75rem;
+    }
+
+    .ui-table-pagination-button-group .ui-table-pagination-button-number.active {
+        @apply bg-indigo-600 text-white;
+    }
+
+    .ui-table-pagination-button-group .ui-table-pagination-button-next,
+    .ui-table-pagination-button-group .ui-table-pagination-button-prev {
+        @apply border border-gray-200 disabled:bg-gray-100 disabled:text-gray-400;
+    }
+
+    .ui-table-pagination-button-group .ui-table-pagination-button-prev {
+        @apply rounded-l-lg;
+    }
+
+    .ui-table-pagination-button-group .ui-table-pagination-button-next {
+        @apply rounded-r-lg;
+    }
+
+}
